@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { ItemsListComponent } from './items-list/items-list.component';
 import { ItemsService } from './items-service.service';
 import { AppRoutingModule } from './router';
+import { ItemDetailsComponent } from './item-details/item-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ItemsListComponent
+    ItemsListComponent,
+    ItemDetailsComponent
   ],
   imports: [
     BrowserModule,

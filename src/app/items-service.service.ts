@@ -25,8 +25,18 @@ export class ItemsService {
       .catch((error: any) => Observable.throw(error));
   }
 
-/*  getItemById(id: number): any {
-    return this.items.filter(item => item.id === id);
+  getItemById(id: number): Observable<any> {
+    const url = `${this.url}/${id}`;
+    return this.http.get(url)
+      .map(this.extractData)
+      .catch((error: any) => Observable.throw(error));
+  }
+
+/*  getItemById(id: number): Promise<any> {
+    const url = `${this.url}/${id}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json().data)
+      .catch((error: any) => Observable.throw(error));
   }*/
 }
-

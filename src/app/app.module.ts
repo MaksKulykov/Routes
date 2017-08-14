@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ItemsListComponent } from './items-list/items-list.component';
 import { ItemsService } from './items-service.service';
+import { AppRoutingModule } from './router';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { ItemsService } from './items-service.service';
     ItemsListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [
     ItemsService

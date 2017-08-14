@@ -18,10 +18,10 @@
           <td>{{item.title}}</td>
           <td>{{item.price}}</td>
           <td>
-            <button class="btn btn-default">Просмотреть</button>
+            <button class="btn btn-default" (click)="goToDetail(item.id, 'view')">Просмотреть</button>
           </td>
           <td>
-            <button class="btn btn-default">Купить</button>
+            <button class="btn btn-default" (click)="goToDetail(item.id, 'buy')">Купить</button>
           </td>
         </tr>
         </tbody>

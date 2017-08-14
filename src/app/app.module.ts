@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { MockDataService } from './mock-data.service';
 
 import { AppComponent } from './app.component';
 import { ItemsListComponent } from './items-list/items-list.component';
@@ -15,7 +19,11 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpModule,
+    AppRoutingModule,
+    InMemoryWebApiModule.forRoot(MockDataService, {
+      passThruUnknownUrl: true
+    })
   ],
   providers: [
     ItemsService

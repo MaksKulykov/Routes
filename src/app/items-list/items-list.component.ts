@@ -22,9 +22,19 @@ export class ItemsListComponent implements OnInit {
     this.getItems();
   }
   getItems(): void {
-    this.items = this.itemsService.getItems();
+    this.itemsService.getItems()
+    .subscribe(
+      (items => {
+        if (items && items.length) {
+          this.items = items;
+        }
+      }),
+      (error: any) => {
+        console.log(error);
+      }
+    );
   }
-  goToDetail(id: string, status: string): void {
+  goToDetail(id: number, status: string): void {
     this.router.navigate(['/item', id, status]);
   }
 }

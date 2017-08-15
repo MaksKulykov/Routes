@@ -31,12 +31,4 @@ export class ItemsService {
       .map(this.extractData)
       .catch((error: any) => Observable.throw(error));
   }
-
-/*  getItemById(id: number): Promise<any> {
-    const url = `${this.url}/${id}`;
-    return this.http.get(url)
-      .toPromise()
-      .then(response => response.json().data)
-      .catch((error: any) => Observable.throw(error));
-  }*/
 }

@@ -6,6 +6,8 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
+import { Item } from './models/item';
+
 @Injectable()
 export class ItemsService {
   private url = 'api/items';
@@ -13,7 +15,7 @@ export class ItemsService {
 
   constructor(private http: Http) { }
 
-  private extractData(res: Response): any[] {
+  private extractData(res: Response): Item[] {
     const body = res.json();
     return body.data || {};
   }

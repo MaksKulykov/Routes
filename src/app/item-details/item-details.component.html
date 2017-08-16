@@ -20,7 +20,8 @@
       </table>
     </div>
   </div>
+  <div *ngIf="status === 'buy'" class="alert alert-success">
+    Товар добавлен в корзину
+  </div>
 </div>
-<div *ngIf="status === 'buy'">
-  <h2>Товар добавлен в корзину</h2>
-</div>
+

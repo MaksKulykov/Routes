@@ -4,6 +4,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/switchMap';
 
+import { Item } from '../models/item';
 import {ItemsService} from '../items-service.service';
 
 @Component({
@@ -15,13 +16,14 @@ export class ItemDetailsComponent implements OnInit {
   title = 'Описание товара';
   id: number;
   status: string;
-  item: any = [];
+  item: Item;
 
   constructor(private itemsService: ItemsService,
               private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.item = new Item();
     this.getItemById();
   }
   getItemById(): void {

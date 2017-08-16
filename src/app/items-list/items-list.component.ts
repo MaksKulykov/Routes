@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { Item} from '../models/item';
 import { ItemsService } from '../items-service.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { ItemsService } from '../items-service.service';
 })
 export class ItemsListComponent implements OnInit {
   title = 'Список товаров';
-  items: Array<any>;
+  items: Item[];
 
   constructor(
     private itemsService: ItemsService,

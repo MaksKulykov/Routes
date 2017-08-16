@@ -10,6 +10,7 @@ import { ItemsListComponent } from './items-list/items-list.component';
 import { ItemsService } from './items-service.service';
 import { AppRoutingModule } from './router';
 import { ItemDetailsComponent } from './item-details/item-details.component';
+import { ItemResolve } from './shared/guards/item.resolve';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
     })
   ],
   providers: [
-    ItemsService
+    ItemsService,
+    ItemResolve
   ],
   bootstrap: [AppComponent]
 })

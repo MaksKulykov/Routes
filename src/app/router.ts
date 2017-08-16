@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ItemsListComponent } from './items-list/items-list.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
+import { ItemResolve } from './shared/guards/item.resolve';
 
 const routes: Routes = [
   {
@@ -11,7 +12,10 @@ const routes: Routes = [
   },
   {
     path: 'item/:id/:status',
-    component: ItemDetailsComponent
+    component: ItemDetailsComponent,
+    resolve: {
+      item: ItemResolve
+    }
   },
   {
     path: '',

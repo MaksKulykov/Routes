@@ -31,7 +31,7 @@ export class ItemDetailsComponent implements OnInit {
   goToList(): void {
     if (this.status === 'buy') {
       setTimeout(() => {
-        this.location.back();
+        this.goBack();
       }, 5000);
     }
   }

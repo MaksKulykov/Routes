@@ -22,10 +22,18 @@ export class ItemDetailsComponent implements OnInit {
     this.item = new Item();
     this.activatedRoute.params.subscribe(params => {this.status = params['status']; });
     this.item = this.activatedRoute.snapshot.data['item'];
+    this.goToList();
   }
 
   goBack(): void {
     this.location.back();
+  }
+  goToList(): void {
+    if (this.status === 'buy') {
+      setTimeout(() => {
+        this.location.back();
+      }, 5000);
+    }
   }
 }
 

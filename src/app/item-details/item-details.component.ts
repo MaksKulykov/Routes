@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import { Location } from '@angular/common';
 
 import { Item } from '../models/item';
 
@@ -13,7 +14,8 @@ export class ItemDetailsComponent implements OnInit {
   status: string;
   item: Item;
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute,
+              private location: Location) {
   }
 
   ngOnInit() {
@@ -22,5 +24,8 @@ export class ItemDetailsComponent implements OnInit {
     this.item = this.activatedRoute.snapshot.data['item'];
   }
 
+  goBack(): void {
+    this.location.back();
+  }
 }
 

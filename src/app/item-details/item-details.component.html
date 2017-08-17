@@ -23,5 +23,6 @@
   <div *ngIf="status === 'buy'" class="alert alert-success">
     Товар добавлен в корзину
   </div>
+  <button class="btn btn-default" *ngIf="status === 'view'" (click)="goBack()">Назад</button>
 </div>
 
